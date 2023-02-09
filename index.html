@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Hi, I'm David!
+</title>
+<style>
+html {
+    cursor: none;
+}
+body {
+    font-family: Roboto, Verdana, no-serif;
+}
+#image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#title {
+    color: #b00b1e;
+    font-size: 300%;
+    margin-top: 11vw;
+    margin-bottom: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+#points {
+    padding: 0;
+    margin: 0;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 200%;
+}
+#points li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+</style>
+<script>
+var slides = [{"points": ["I'm a game developer from Zurich.", "I mostly work on Airships: Conquer the Skies, a steampunk strategy game.", "It's written in Java."], "title": "Hi, I'm David!"}, {"image": "airships.png", "points": [], "title": "airships.png"}, {"points": ["I also make jam games and prototypes using JavaScript.", "No framework, just some base code using Canvas.", "Plus howler.js and Handlebars when needed."], "title": "No, I didn't get lost."}, {"points": ["Input", "Update", "Display"], "title": "Games are just a loop."}, {"points": ["Fast to set up", "Stable, bug-free API", "No compile times", "Easy to share via github pages / itch.io"], "title": "Advantages"}, {"points": ["2D only", "Does it scale?"], "title": "Disadvantages"}, {"points": [], "title": "Some Games"}, {"image": "iob.png", "points": [], "title": "iob.png"}, {"image": "turtletown.png", "points": [], "title": "turtletown.png"}, {"image": "corvussector.png", "points": [], "title": "corvussector.png"}, {"image": "odabs.png", "points": [], "title": "odabs.png"}, {"image": "witchcraft.png", "points": [], "title": "witchcraft.png"}, {"points": ["https://github.com/Zarkonnen/HTML5Baseline", "http://zarkonnen.com/all_you_need_is_a_main_game_loop"], "title": "Links"}, {"points": [], "title": "Questions?"}, {"points": ["zarkonnen@itch.io", "zarkonnen@mastodon.social", "zarkonnen.com"], "title": "Thanks!"}] ;
+</script>
+<script>
+var index = 0;
+function showSlide() {
+    if (slides[index].image) {
+        document.getElementById("title").innerHTML = "";
+        document.getElementById("image").src = slides[index].image;
+        document.getElementById("image").style.display = "block";
+    } else {
+        document.getElementById("title").innerHTML = slides[index].title;
+        document.getElementById("image").style.display = "none";
+    }
+    document.getElementById("points").innerHTML = slides[index].points.map(function(p) {
+        return "<li>" + p + "</li>";
+    }).join("");
+}
+
+function next() {
+    if (index < slides.length - 1) {
+        index++;
+        showSlide();
+    }
+}
+
+function prev() {
+    if (index > 0) {
+        index--;
+        showSlide();
+    }
+}
+
+function keyup(event) {
+    if (event.code == "ArrowLeft") {
+        prev();
+    } else if (event.code == "ArrowRight" || event.code == "Space") {
+        next();
+    }
+}
+</script>
+</head>
+<body onClick="next()" onKeyUp="keyup(event)">
+<img id="image">
+<div id="title"></div>
+<ul id="points"></ul>
+<script>
+showSlide();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+Hi, I'm David!
+- I'm a game developer from Zurich.
+- I mostly work on Airships: Conquer the Skies, a steampunk strategy game.
+- It's written in Java.
+airships.png
+No, I didn't get lost.
+- I also make jam games and prototypes using JavaScript.
+- No framework, just some base code using Canvas.
+- Plus howler.js and Handlebars when needed.
+Games are just a loop.
+- Input
+- Update
+- Display
+Advantages
+- Fast to set up
+- Stable, bug-free API
+- No compile times
+- Easy to share via github pages / itch.io
+Disadvantages
+- 2D only
+- Does it scale?
+Some Games
+iob.png
+turtletown.png
+corvussector.png
+odabs.png
+witchcraft.png
+Links
+- https://github.com/Zarkonnen/HTML5Baseline
+- http://zarkonnen.com/all_you_need_is_a_main_game_loop
+Questions?
+Thanks!
+- zarkonnen@itch.io
+- zarkonnen@mastodon.social
+- zarkonnen.com
